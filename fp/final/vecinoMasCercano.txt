@@ -1,1 +1,0 @@
-El punto vecino mas cercano al punto [-98, -177] es: [-140, -189]
