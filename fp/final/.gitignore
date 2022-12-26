@@ -1,3 +1,2 @@
-compendioDePuntos.txt
-resultadosDeDistancia.txt
-vecinoMasCercano.txt
+*.txt
+*.pdf
