@@ -1,2 +1,1 @@
-La distancia entre el punto [0, 0] y el punto [0, 0] es: 0.00
-La distancia entre el punto [-107, -176] y el punto [-107, -176] es: 0.00
+La distancia entre el punto [-157, -194] y el punto [-172, -193] es: 15.03

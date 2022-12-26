@@ -94,18 +94,23 @@ void distanciaEntrePuntos(POINT P, int first, int second){
 void menorDistanciaEntrePuntos(POINT P, int tam){
     float distancia = 0;
     float menorDistancia = 0;
+    int pasada = 0;
     int first = 0;
     int second = 0;
     for(int i = 0; i < tam; i++){
-        for(int j = 0; j < tam; j++){
+        for(int j = i; j < tam; j++){
             if(i != j){
                 float x1 = P[i].x;
                 float y1 = P[i].y;
                 float x2 = P[j].x;
                 float y2 = P[j].y;
-                float x3 = x1 - x2;
-                float y3 = y1 - y2;
+                float x3 = x2 - x1;
+                float y3 = y2 - y1;
                 distancia = sqrt(pow(x3, 2) + pow(y3, 2));
+                if (pasada == 0){
+                    menorDistancia = distancia;
+                    pasada++;
+                }                
                 if(distancia < menorDistancia){
                     menorDistancia = distancia;
                     first = i;
@@ -121,6 +126,7 @@ void menorDistanciaEntrePuntos(POINT P, int tam){
 void puntoVecinoMasCercano(POINT P, int tam, int p){
     float distancia = 0;
     float menorDistancia = 0;
+    int pasada = 0;
     int first = 0;
     int second = 0;
     for(int i = 0; i < tam; i++){
@@ -132,6 +138,10 @@ void puntoVecinoMasCercano(POINT P, int tam, int p){
             float x3 = x1 - x2;
             float y3 = y1 - y2;
             distancia = sqrt(pow(x3, 2) + pow(y3, 2));
+            if (pasada == 0){
+                    menorDistancia = distancia;
+                    pasada++;
+            }  
             if(distancia < menorDistancia){
                 menorDistancia = distancia;
                 first = p;
@@ -155,7 +165,7 @@ void imprimirDetallesPuntos(POINT P, int tam){
     switch(option){
         case 1:
             for(i = 0; i < tam; i++){
-                printf("Punto %d: [%.0f, %.0f]\n", P[i].identificadorDePunto, P[i].x, P[i].y);
+                printf("Punto %d: [x: %.0f, y: %.0f]\n", P[i].identificadorDePunto, P[i].x, P[i].y);
                 printf("\tModulo: %.2f\n", P[i].modulo);
                 printf("\tAngulo: %.2f\n", P[i].angulo);
             }
@@ -163,7 +173,7 @@ void imprimirDetallesPuntos(POINT P, int tam){
         case 2:
             printf("Ingrese el punto a imprimir: ");
             scanf("%d", &p);
-            printf("Punto %d: [%.0f, %.0f]\n", P[p].identificadorDePunto, P[p].x, P[p].y);
+            printf("Punto %d: [x: %.0f, y: %.0f]\n", P[p].identificadorDePunto, P[p].x, P[p].y);
             printf("\tModulo: %.2f\n", P[p].modulo);
             printf("\tAngulo: %.2f\n", P[p].angulo);
             break;
@@ -291,5 +301,3 @@ void resultadosDeDistanciaArchivo(POINT P, int first, int second, float menorDis
 
     fclose(fp);
 }
-
-//sacar la distancia de todos y hacer bubblesort para sacar las mas bajas
