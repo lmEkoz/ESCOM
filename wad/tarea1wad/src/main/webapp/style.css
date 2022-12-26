@@ -1,0 +1,21 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #1b1b1b;
+    color: #ffffff;
+}
+
+h1 {
+    color: #ffa31a;
+}
+
+.krammerBby {
+    display: flex;
+    justify-content: center;
+
+}
+
+.centerSection {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
