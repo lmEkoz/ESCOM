@@ -9,7 +9,7 @@ POINT ingresarPuntosAleatoriamente(int tam){
     POINT points = (POINT)malloc(sizeof(Point)*tam);
     srand(time(NULL));
     for(int i = 0; i < tam; i++){
-        points[i].identificadorDePunto = i + 1;
+        points[i].identificadorDePunto = i ;
         points[i].x = (rand() % 400) - 200;
         points[i].y = (rand() % 100) - 200;
         points[i].modulo = sqrt(pow(points[i].x, 2) + pow(points[i].y, 2));
@@ -124,7 +124,7 @@ void puntoVecinoMasCercano(POINT P, int tam, int p){
     int first = 0;
     int second = 0;
     for(int i = 0; i < tam; i++){
-        if(i != p){
+        if(i != p ){
             float x1 = P[p].x;
             float y1 = P[p].y;
             float x2 = P[i].x;
@@ -291,3 +291,5 @@ void resultadosDeDistanciaArchivo(POINT P, int first, int second, float menorDis
 
     fclose(fp);
 }
+
+//sacar la distancia de todos y hacer bubblesort para sacar las mas bajas
