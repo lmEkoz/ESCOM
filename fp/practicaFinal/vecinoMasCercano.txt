@@ -1,0 +1,1 @@
+El punto vecino mas cercano al punto [-71, -155] es: [-71, -155]
